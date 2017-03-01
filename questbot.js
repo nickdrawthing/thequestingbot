@@ -40,8 +40,7 @@ for (var i = 0; i < textByLine.length; i++){
 
 //----- Generate a random string using the arrays created above
 
-//setInterval(makeAndPost, 1000*60*60*3);
-setInterval(makeAndPost, 1000*5);
+setInterval(makeAndPost, 1000*60*60*3);
 
 function makeAndPost(){
 	//var incNumero = fs.readFileSync('./test', 'utf-8');
