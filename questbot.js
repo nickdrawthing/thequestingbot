@@ -41,24 +41,24 @@ for (var i = 0; i < textByLine.length; i++){
 //----- Generate a random string using the arrays created above
 
 //setInterval(makeAndPost, 1000*60*60*2);
-setInterval(makeAndPost, 1000*10);
+setInterval(makeAndPost, 1000*60*60*3);
 
 function makeAndPost(){
-	var incNumero = fs.readFileSync('./test', 'utf-8');
-	incNumero = parseInt(incNumero);
+	//var incNumero = fs.readFileSync('./test', 'utf-8');
+	//incNumero = parseInt(incNumero);
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
 	aRawString = parse.branchedString(aRawString);
-	console.log(aRawString + " " + incNumero);
+	console.log(aRawString;
 	console.log('');
-	tweetIt(aRawString + " " + incNumero);	
-	incNumero++;
-	fs.writeFile("./test", incNumero, function(err) {
-		if (err) {
-			return console.log(err);
-		}
+	tweetIt(aRawString);	
+	//incNumero++;
+	// fs.writeFile("./test", incNumero, function(err) {
+	// 	if (err) {
+	// 		return console.log(err);
+	// 	}
 
-		console.log("The file was saved!");
-	});
+	// 	console.log("The file was saved!");
+	// });
 }
 //*/
 
