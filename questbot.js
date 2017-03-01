@@ -40,15 +40,15 @@ for (var i = 0; i < textByLine.length; i++){
 
 //----- Generate a random string using the arrays created above
 
-//setInterval(makeAndPost, 1000*60*60*2);
-setInterval(makeAndPost, 1000*60*60*3);
+//setInterval(makeAndPost, 1000*60*60*3);
+setInterval(makeAndPost, 1000*5);
 
 function makeAndPost(){
 	//var incNumero = fs.readFileSync('./test', 'utf-8');
 	//incNumero = parseInt(incNumero);
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
 	aRawString = parse.branchedString(aRawString);
-	console.log(aRawString;
+	console.log(aRawString);
 	console.log('');
 	tweetIt(aRawString);	
 	//incNumero++;
