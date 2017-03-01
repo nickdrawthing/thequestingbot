@@ -38,12 +38,27 @@ for (var i = 0; i < textByLine.length; i++){
 
 }
 
-//----- Generate a number of strings using the arrays created above
-for (xx = 0; xx < 1; xx++){
+//----- Generate a random string using the arrays created above
+
+//setInterval(makeAndPost, 1000*60*60*2);
+setInterval(makeAndPost, 1000*10);
+
+function makeAndPost(){
+	var incNumero = fs.readFileSync('./test', 'utf-8');
+	incNumero = parseInt(incNumero);
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
 	aRawString = parse.branchedString(aRawString);
-	console.log(aRawString + " " + aRawString.length);
+	console.log(aRawString + " " + incNumero);
 	console.log('');
+	tweetIt(aRawString + " " + incNumero);	
+	incNumero++;
+	fs.writeFile("./test", incNumero, function(err) {
+		if (err) {
+			return console.log(err);
+		}
+
+		console.log("The file was saved!");
+	});
 }
 //*/
 
@@ -120,8 +135,6 @@ function searchTwitter(searchTerm, returnNum){
 }
 
 //------------------------POSTING--------------------------
-
-//tweetIt(aRawString);
 
 function tweetIt(theTweet){
 	var tweet = {

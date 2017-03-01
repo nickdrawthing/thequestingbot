@@ -1,8 +1,8 @@
 {
-  "created_at": "Wed Mar 01 00:51:50 +0000 2017",
-  "id": 836740728256626700,
-  "id_str": "836740728256626692",
-  "text": "PARSING SPELLBOOKS...",
+  "created_at": "Wed Mar 01 02:21:21 +0000 2017",
+  "id": 836763258803601400,
+  "id_str": "836763258803601412",
+  "text": "There was a mouse playing on the path today. It made me smile.",
   "truncated": false,
   "entities": {
     "hashtags": [],
@@ -39,7 +39,7 @@
     "time_zone": "Pacific Time (US & Canada)",
     "geo_enabled": false,
     "verified": false,
-    "statuses_count": 5,
+    "statuses_count": 8,
     "lang": "en",
     "contributors_enabled": false,
     "is_translator": false,
