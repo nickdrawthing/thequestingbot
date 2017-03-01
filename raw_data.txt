@@ -1,0 +1,96 @@
+$seed
+[_purchase]
+[_event] [_response]
+
+$_purchase
+I got a good deal on a [_gear] today. It [is a [handsome|pretty|rich] [_colour] colour|is well [worn|made|crafted]].
+I bought a [[_gear]|magic [_gear]] from a [_vendor] [_race] [_location].
+My friend found a [_gear] for me [he|she] thought I might like. I did like it quite a bit!
+I found a treasure chest [today|last night|this morning]. Inside it was [a pretty [_colour] [jewel|necklace|[_gear]]|enough gold to replace my old [_gear]]!
+
+$_gear
+sword
+spear
+bow
+staff
+dagger
+wand
+scepter
+cloak
+crown
+hat
+coat
+axe
+stone
+
+$_vendor
+one-[armed|legged]
+lonely old
+cheerful
+young
+blind
+boisterous
+
+$_race
+goblin
+elf
+dwarf
+orc
+bugbear
+human
+
+$_event
+I got to [pet|play with|see] a [_size] [_temperament] [_animal] today.
+There was a [_animal] playing [_location] today.
+A [_colour] [leaf|feather|flower] landed by my feet. It clearly came off of something beautiful.
+I heard my old [friend|adventuring companion|teacher|student] [went on a very lucrative adventure|defeated a dragon|saved some villagers] recently! [I'm proud of them!|I feel proud to know them.|I'm so happy for them!]
+
+$_colour
+red
+yellow
+purple
+white
+
+$_location
+in the town square
+at the edge of the woods
+in my yard
+behind the stables
+on the path
+down by the water
+below the cliffs
+in a cave
+at the foot of the mountain
+
+$_response
+It made me feel [happy|rejuvinated|warm inside|wonderful|a renewed sense of purpose|better about everything].
+That always makes me happy.
+It [perked me right up|warmed my heart|made me smile].
+
+$_size
+big
+great big
+tiny
+medium sized
+small
+runty
+
+$_temperament
+shy
+goofy
+playful
+friendly
+inquisitive
+
+$_animal
+cat
+[dog|hound]
+horse
+rabbit
+squirrel
+raven
+owl
+mouse
+rat
+donkey
+otter
