@@ -1,12 +1,16 @@
 $seed
 [_purchase]
 [_event] [_response]
+[I saw a notice up [in the town square|on the bulletin board]|The [old gaffer|barkeep|barmaid|matron|drunks] [mentioned|said]] that [_job].
 
 $_purchase
 I got a good deal on a [_gear] today. It [is a [handsome|pretty|rich] [_colour] colour|is well [worn|made|crafted]].
-I bought a [[_gear]|magic [_gear]] from a [_vendor] [_race] [_location].
-My friend found a [_gear] for me [he|she] thought I might like. I did like it quite a bit!
+I bought a [[_gear]|magic [_gear]] from a [_vendor] [_race] [today|yesterday].
+My friend found a [_gear] for me [he|she] thought I might like. I like it quite a bit!
 I found a treasure chest [today|last night|this morning]. Inside it was [a pretty [_colour] [jewel|necklace|[_gear]]|enough gold to replace my old [_gear]]!
+I noticed my [_gear] is looking a little [shabby|worse for wear]. Might be time to [replace it|get a new one].
+I added a new [_gear] to my amazon wishlist.
+I traded [_trinket] for a [new [_gear]|[_trinket]].
 
 $_gear
 sword
@@ -21,7 +25,63 @@ crown
 hat
 coat
 axe
-stone
+cape
+helmet
+shield
+buckler
+hammer
+backpack
+
+$_trinket
+a dragon egg
+dragon scales
+eight matching silver cups
+a ceremonial helm
+a coil of silken cable
+an ancient fertility sculpture
+a nautilus shell
+a stack of fine vellum
+a huge tortoise shell
+a polished silver looking-glass
+gem-encrusted cutlery
+silk handkerchiefs
+a small dragon skull
+a snake skin
+jewelcrafting tools
+doeskin boots
+a collection of flags and banners
+white silk gloves
+paper pouches of dried herbs and spices
+a porcelain doll
+a bismuth crystal
+a coin collection
+a massive scarlet crustacean claw
+henna, turmeric, and indigo
+an exquisitely preserved fish fossil
+a snow leopard skin
+a bottle of perfume
+a silver flask
+a geode
+a candleabra
+bathing salts
+a box of lace
+dwarven beer recipes
+a spool of excellent leather cord
+medicated creams and ointments
+colourful makeup
+a pouch of pearlescent fish scales
+ivory spice shakers
+a jar of honey
+false teeth
+a silver lockbox
+red skates
+blue suede shoes
+a taxedermied platypus
+a telescope
+tinkling hand bells
+coffee beans
+tortoiseshell combs
+a copper bottom cook pot
 
 $_vendor
 one-[armed|legged]
@@ -38,12 +98,24 @@ dwarf
 orc
 bugbear
 human
+bullywug
+halfling
 
 $_event
 I got to [pet|play with|see] a [_size] [_temperament] [_animal] today.
 There was a [_animal] playing [_location] today.
-A [_colour] [leaf|feather|flower] landed by my feet. It clearly came off of something beautiful.
+A [_colour] [leaf|feather|flower] landed by my feet. It was beautiful.
 I heard my old [friend|adventuring companion|teacher|student] [went on a very lucrative adventure|defeated a dragon|saved some villagers] recently! [I'm proud of them!|I feel proud to know them.|I'm so happy for them!]
+The leaves are changing their colour again.
+
+$_job
+there is an ogre harassing travelers [_farofflocation]
+magic runoff is causing the sewer rats to grow unusually large
+there have been dragon sightings [_farofflocation]
+a group of bandits led by a [_race] are [[_location]|[_farofflocation]]
+the [prince|princess] has been abducted by monsters
+there are ghost sightings [_farofflocation]
+goblins are roaming [_farofflocation]
 
 $_colour
 red
@@ -61,6 +133,17 @@ down by the water
 below the cliffs
 in a cave
 at the foot of the mountain
+
+$_farofflocation
+on the road
+over the smoky hills
+in the swamp
+at the heart of the forest
+in the woods
+at the edge of town
+in the countryside
+up at the old fort
+the old parade grounds
 
 $_response
 It made me feel [happy|rejuvinated|warm inside|wonderful|a renewed sense of purpose|better about everything].
@@ -94,3 +177,4 @@ mouse
 rat
 donkey
 otter
+[pig|boar|peccary]

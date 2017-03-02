@@ -3,9 +3,10 @@ console.log('The bot is questing!');
 //------------------------INCLUDES--------------------------
 
 var fs = require('fs');
+var AWS = require('aws-sdk');
+var zlib = require('zlib');
 var Twit = require('twit');
 var config = require('./config');
-var roster = require('./roster');
 var parse = require('./text_parser');
 var T = new Twit(config);
 
@@ -16,11 +17,9 @@ var T = new Twit(config);
 var textSets = new Array();
 var rawInputText = fs.readFileSync("./raw_data.txt", 'utf-8'); 	// <------------------ Replace arrays with objects
 var textByLine = rawInputText.split("\n");						// <------------------ so you can refer to them
-//console.log(textByLine);
 for (var i = 0; i < textByLine.length; i++){
 	if (textByLine[i].substring(0,1) == '$'){
 		var newArrayName = textByLine[i].substring(1,textByLine[i].length);
-//		console.log(newArrayName);
 		global[newArrayName] = new Array();
 		var jj = 0;
 		var kk = 1;
@@ -33,39 +32,20 @@ for (var i = 0; i < textByLine.length; i++){
 			}
 		}
 		textSets.push(global[newArrayName]);
-		//console.log(global[newArrayName]);
 	}
 
 }
 
 //----- Generate a random string using the arrays created above
 
-setInterval(makeAndPost, 1000*60*60*3);
+setInterval(makeAndPost, 1000*60*60*6);
 
 function makeAndPost(){
-	//var incNumero = fs.readFileSync('./test', 'utf-8');
-	//incNumero = parseInt(incNumero);
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
 	aRawString = parse.branchedString(aRawString);
 	console.log(aRawString);
-	console.log('');
 	tweetIt(aRawString);	
-	//incNumero++;
-	// fs.writeFile("./test", incNumero, function(err) {
-	// 	if (err) {
-	// 		return console.log(err);
-	// 	}
-
-	// 	console.log("The file was saved!");
-	// });
 }
-//*/
-
-// for (xx = 0; xx < 5; xx++){
-// 	var aRawString = raw.thingypoo[Math.floor(Math.random() * raw.thingypoo.length)];
-// 	console.log(parse.branchedString(aRawString));
-// }
-
 
 //------------------------STREAMING--------------------------
 
@@ -133,7 +113,7 @@ function searchTwitter(searchTerm, returnNum){
 	}
 }
 
-//------------------------POSTING--------------------------
+//------------------------POSTING TO TWITTER--------------------------
 
 function tweetIt(theTweet){
 	var tweet = {
@@ -154,3 +134,10 @@ function tweetIt(theTweet){
 		}
 	}
 }
+
+//--------------------------POSTING TO AMAZON AWS----------------------
+
+// var body = fs.createReadStream('bigfile').pipe(zlib.createGzip());
+// var s3obj = new AWS.S3({params: {Bucket: 'myBucket', Key: 'myKey'}});
+// s3obj.upload({Body: body}).on('httpUploadProgress', function(evt) { console.log(evt); }).
+//   send(function(err, data) { console.log(err, data) });

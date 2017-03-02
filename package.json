@@ -13,6 +13,12 @@
   "author": "Nicholas_Hendriks",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "2.x",
+    "ejs": "2.x",
+    "express": "4.x",
+    "filereader": "^0.10.3",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^17.1.0",
     "twit": "^2.2.5"
   }
 }
