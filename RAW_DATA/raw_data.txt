@@ -10,7 +10,7 @@ My friend found a [_gear] for me [he|she] thought I might like. I like it quite 
 I found a treasure chest [today|last night|this morning]. Inside it was [a pretty [_colour] [jewel|necklace|[_gear]]|enough gold to replace my old [_gear]]!
 I noticed my [_gear] is looking a little [shabby|worse for wear]. Might be time to [replace it|get a new one].
 I added a new [_gear] to my amazon wishlist.
-I traded [_trinket] for a [new [_gear]|[_trinket]].
+I traded [_trinket] for [a new [_gear]|[_trinket]].
 
 $_gear
 sword
@@ -101,6 +101,45 @@ human
 bullywug
 halfling
 
+$_monsters
+[_monpt1] [_monpt2] [_monpt3]
+
+$_monpt1
+undead
+poxed
+burned
+dire
+albino
+immortal
+ancient
+skeletal
+mutant
+[_monpt1] [_monpt1]
+
+$_monpt2
+boar
+snake
+mushroom
+hound
+fox
+spider
+crow
+sparrow
+fish
+hare
+
+$_monpt3
+men
+women
+children
+golems
+ghosts
+soldiers
+demons
+creatures
+beasts
+witches
+
 $_event
 I got to [pet|play with|see] a [_size] [_temperament] [_animal] today.
 There was a [_animal] playing [_location] today.
@@ -113,9 +152,9 @@ there is an ogre harassing travelers [_farofflocation]
 magic runoff is causing the sewer rats to grow unusually large
 there have been dragon sightings [_farofflocation]
 a group of bandits led by a [_race] are [[_location]|[_farofflocation]]
-the [prince|princess] has been abducted by monsters
-there are ghost sightings [_farofflocation]
-goblins are roaming [_farofflocation]
+the [prince|princess] has been abducted by [_monsters]
+there are [spirit|demon|ghost] sightings [_farofflocation]
+[orcs|[_monsters]|bandits|goblins] are roaming [_farofflocation]
 
 $_colour
 red
@@ -133,8 +172,11 @@ down by the water
 below the cliffs
 in a cave
 at the foot of the mountain
+at [_locationnamegen]
 
 $_farofflocation
+in the grove
+on the wold
 on the road
 over the smoky hills
 in the swamp
@@ -144,6 +186,7 @@ at the edge of town
 in the countryside
 up at the old fort
 the old parade grounds
+[_locationnamegen]
 
 $_response
 It made me feel [happy|rejuvinated|warm inside|wonderful|a renewed sense of purpose|better about everything].
@@ -178,3 +221,48 @@ rat
 donkey
 otter
 [pig|boar|peccary]
+
+$_locationnamegen
+[_locpt1][_locpt2][_locpt3]
+
+$_locpt1
+Stone
+Fog
+Bear
+Blood
+Chill
+Night
+Ankle
+Bloat
+Cod
+Dusk
+Thrush
+Smoke
+
+$_locpt2
+-Marsh
+top
+-Fen
+-Grove
+-Turn
+wallow
+ Nest
+-Bottom
+-Foot
+-Claw
+-Wind
+-Break
+
+$_locpt3
+ Hollow
+’s End
+ Village
+ Gulch
+ Basin
+ Gate
+ Strait
+ Bluffs
+ Road
+ Point
+ Bend
+ Pass

@@ -1,0 +1,4 @@
+Will eventually contain stats for:
+- Weapons
+- Monsters
+- Magic Items

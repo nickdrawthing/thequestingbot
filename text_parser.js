@@ -69,7 +69,7 @@ module.exports = {
 		for (var i = 0; i < inString.length; i++){
 			if (i+1 == inString.length) {
 				randomOptions.push(inString.substring(lnBreak,i+1));
-				console.log(inString.substring(lnBreak,i+1));
+				//console.log(inString.substring(lnBreak,i+1));
 				i++;
 			} else if (inString.substring(i,i+1) == '['){
 				braceScope++;
@@ -90,7 +90,7 @@ module.exports = {
 				braceScope--;
 			} else if (inString.substring(i,i+1) == '|' && braceScope == 0) {
 				randomOptions.push(inString.substring(lnBreak,i));
-				console.log(inString.substring(lnBreak,i));
+				//console.log(inString.substring(lnBreak,i));
 				lnBreak = i+1;
 			}
 		}
@@ -108,5 +108,15 @@ module.exports = {
 			v = this.branchedString(v);
 		}
 		return v;
+	},
+
+	sliceIntoTweets: function (inString){
+		//Finish making this function
+		if (inString.length > 140){
+			//Chop text into sentences maximum 140 characters in length
+			//Stuff these pieces into an object or array to be passed back
+		}
+
+		return inString;
 	}
 };

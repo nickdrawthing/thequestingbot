@@ -3,8 +3,6 @@ console.log('The bot is questing!');
 //------------------------INCLUDES--------------------------
 
 var fs = require('fs');
-var AWS = require('aws-sdk');
-var zlib = require('zlib');
 var Twit = require('twit');
 var config = require('./config');
 var parse = require('./text_parser');
@@ -15,7 +13,7 @@ var T = new Twit(config);
 
 //----- Read in text file and make arrays
 var textSets = new Array();
-var rawInputText = fs.readFileSync("./raw_data.txt", 'utf-8'); 	// <------------------ Replace arrays with objects
+var rawInputText = fs.readFileSync("./RAW_DATA/raw_data.txt", 'utf-8'); 	// <------------------ Replace arrays with objects
 var textByLine = rawInputText.split("\n");						// <------------------ so you can refer to them
 for (var i = 0; i < textByLine.length; i++){
 	if (textByLine[i].substring(0,1) == '$'){
@@ -137,7 +135,22 @@ function tweetIt(theTweet){
 
 //--------------------------POSTING TO AMAZON AWS----------------------
 
-// var body = fs.createReadStream('bigfile').pipe(zlib.createGzip());
-// var s3obj = new AWS.S3({params: {Bucket: 'myBucket', Key: 'myKey'}});
-// s3obj.upload({Body: body}).on('httpUploadProgress', function(evt) { console.log(evt); }).
-//   send(function(err, data) { console.log(err, data) });
+/*
+
+function updateLocalData(){
+	filesToGet = {
+		'file1.txt',
+		'file2.txt'
+	}
+	localCopies = drive.google.pull(filesToGet);
+}
+
+function stashDataInCloud(){
+	filesToPut = {
+		'file1.txt',
+		'file2.txt'
+	}
+	drive.google.push(filesToPut);	
+}
+
+*/
