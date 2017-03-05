@@ -21,4 +21,4 @@ for (var i = 0; i < 5; i++){
 	var unprocessedString = 'I ' + weapon.attack + ' [a|my] ' + weapon.name + ' [towards|at] [the [creature|beast]|my [enemy|foe]]!';
 	console.log(unprocessedString);
 	console.log(parse.branchedString(unprocessedString));
-}
+};
