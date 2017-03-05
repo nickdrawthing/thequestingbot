@@ -137,18 +137,23 @@ function tweetIt(theTweet){
 
 /*
 
+BS psuedocode below vvvv
+
 function updateLocalData(){
 	filesToGet = {
 		'file1.txt',
 		'file2.txt'
 	}
 	localCopies = drive.google.pull(filesToGet);
+
+	fs.writeFile('./RAW_DATA/file1.txt', localCopies[0]);
+	fs.writeFile('./RAW_DATA/file1.txt', localCopies[1]);
 }
 
 function stashDataInCloud(){
 	filesToPut = {
-		'file1.txt',
-		'file2.txt'
+		'./RAW_DATA/file1.txt',
+		'./RAW_DATA/file2.txt'
 	}
 	drive.google.push(filesToPut);	
 }
