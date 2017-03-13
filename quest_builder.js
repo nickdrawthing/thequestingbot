@@ -20,7 +20,17 @@ Quests will be composed of the following kinds of data:
 Also randomly construct four possible heroes. Who attends each quest will be left
 up to the community vote (this functionality might be saved for later)
 
+Quest Types:
+0 Treasure Hunt
 
+Antagonist
+0 Goblin King
+1 Dragon
+2 Lich
+
+Monster Themes
+0 Undead
+1 Aquatic
 
 
 Location themes

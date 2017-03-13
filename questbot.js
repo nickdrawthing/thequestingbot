@@ -5,6 +5,7 @@ console.log('The bot is questing!');
 var fs = require('fs');
 var Twit = require('twit');
 var config = require('./config');
+var fs = require('fs');
 var parse = require('./text_parser');
 var T = new Twit(config);
 
@@ -36,7 +37,9 @@ for (var i = 0; i < textByLine.length; i++){
 
 //----- Generate a random string using the arrays created above
 
-setInterval(makeAndPost, 1000*60*60*6);
+setInterval(makeAndPost, 1000*60*60*24);
+
+//makeAndPost();
 
 function makeAndPost(){
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
@@ -60,9 +63,10 @@ function blessed(tweet){
 
 //------------------------SEARCHING--------------------------
 
-//searchTwitter('from:@POTUS', 5);
+//searchTwitter('from:@spookymeggie', 5);
 
 function searchTwitter(searchTerm, returnNum){
+	
 	var searchparams = {
 		q: searchTerm,
 		count: returnNum
@@ -112,8 +116,8 @@ function searchTwitter(searchTerm, returnNum){
 }
 
 //------------------------POSTING TO TWITTER--------------------------
-
-function tweetIt(theTweet){
+/*
+function tweetIt2(theTweet){
 	var tweet = {
 		status: theTweet
 	}
@@ -121,7 +125,49 @@ function tweetIt(theTweet){
 	T.post('statuses/update', tweet, tweeted);
 
 	function tweeted(err, data, response) {
-		var fs = require('fs');
+		var json = JSON.stringify(data,null,2);
+		fs.writeFile("tweet.json", json);
+		console.log(data);
+		if (err) {
+			console.log("Something went wrong!");
+		} else {
+			console.log("It worked!");
+		}
+	}
+}*/
+
+function tweetIt(theTweet){
+	var tweet = {
+		status: theTweet
+	}
+
+	var tweetChunk = {
+		status: null
+	}
+
+	if (tweet.status.length > 140){
+		var chop = 0;
+		for (var i = 0; i < tweet.status.length; i++){
+			if ((i-chop > 50 && (tweet.status.substring(i,i+1) == '!' ||tweet.status.substring(i,i+1) == '?' ||tweet.status.substring(i,i+1) == '.' ||tweet.status.substring(i,i+1) == ';')) || i-chop >= 140){
+				tweetChunk.status = tweet.status.substring(chop, i+1);
+				chop = i+1;
+				T.post('statuses/update', tweetChunk, tweeted);
+				console.log(tweetChunk.status + ' ' + tweetChunk.length);
+				console.log('');
+			} else if (i+1 == tweet.status.length){
+				tweetChunk.status = tweet.status.substring(chop, i+1);
+				console.log(tweetChunk.status + ' ' + tweetChunk.length);
+			}
+			if (tweet.status.substring(chop, chop+ 1) == ' ') {
+				chop++;
+			}
+		}
+	} else {
+		T.post('statuses/update', tweetChunk, tweeted);
+		//console.log(tweet.status + ' ' + tweet.status.length);
+	}
+
+	function tweeted(err, data, response) {
 		var json = JSON.stringify(data,null,2);
 		fs.writeFile("tweet.json", json);
 		console.log(data);
@@ -136,6 +182,8 @@ function tweetIt(theTweet){
 //--------------------------POSTING TO AMAZON AWS----------------------
 
 /*
+
+
 
 BS psuedocode below vvvv
 
