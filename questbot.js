@@ -3,6 +3,10 @@ console.log('The bot is questing!');
 //------------------------INCLUDES--------------------------
 
 var fs = require('fs');
+// var readline = require('readline');
+// var google = require('googleapis');
+// var googleAuth = require('google-auth-library');
+// const drive = google.drive({ version: 'v4'});
 var Twit = require('twit');
 var config = require('./config');
 var fs = require('fs');
@@ -37,9 +41,10 @@ for (var i = 0; i < textByLine.length; i++){
 
 //----- Generate a random string using the arrays created above
 
-setInterval(makeAndPost, 1000*60*60*24);
 
-//makeAndPost();
+
+setInterval(makeAndPost, 1000*60*60*18);
+
 
 function makeAndPost(){
 	var aRawString = textSets[0][Math.floor(Math.random() * textSets[0].length)];
@@ -178,32 +183,3 @@ function tweetIt(theTweet){
 		}
 	}
 }
-
-//--------------------------POSTING TO AMAZON AWS----------------------
-
-/*
-
-
-
-BS psuedocode below vvvv
-
-function updateLocalData(){
-	filesToGet = {
-		'file1.txt',
-		'file2.txt'
-	}
-	localCopies = drive.google.pull(filesToGet);
-
-	fs.writeFile('./RAW_DATA/file1.txt', localCopies[0]);
-	fs.writeFile('./RAW_DATA/file1.txt', localCopies[1]);
-}
-
-function stashDataInCloud(){
-	filesToPut = {
-		'./RAW_DATA/file1.txt',
-		'./RAW_DATA/file2.txt'
-	}
-	drive.google.push(filesToPut);	
-}
-
-*/
