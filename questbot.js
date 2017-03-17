@@ -43,7 +43,8 @@ for (var i = 0; i < textByLine.length; i++){
 
 
 
-setInterval(makeAndPost, 1000*60*60*18);
+// setInterval(makeAndPost, 1000*60*60*18);
+makeAndPost();
 
 
 function makeAndPost(){
@@ -168,8 +169,8 @@ function tweetIt(theTweet){
 			}
 		}
 	} else {
-		T.post('statuses/update', tweetChunk, tweeted);
-		//console.log(tweet.status + ' ' + tweet.status.length);
+		T.post('statuses/update', tweet, tweeted);
+		console.log(tweet.status + ' ' + tweet.status.length);
 	}
 
 	function tweeted(err, data, response) {
