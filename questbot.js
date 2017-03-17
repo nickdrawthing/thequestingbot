@@ -43,8 +43,7 @@ for (var i = 0; i < textByLine.length; i++){
 
 
 
-// setInterval(makeAndPost, 1000*60*60*18);
-makeAndPost();
+setInterval(makeAndPost, 1000*60*60*18);
 
 
 function makeAndPost(){
