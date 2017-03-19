@@ -3,10 +3,6 @@ console.log('The bot is questing!');
 //------------------------INCLUDES--------------------------
 
 var fs = require('fs');
-// var readline = require('readline');
-// var google = require('googleapis');
-// var googleAuth = require('google-auth-library');
-// const drive = google.drive({ version: 'v4'});
 var Twit = require('twit');
 var config = require('./config');
 var fs = require('fs');

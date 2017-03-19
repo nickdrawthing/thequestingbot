@@ -1,17 +1,24 @@
 # thequestingbot
 
-This is a huge mess and needs some cleanup. HOWEVER: this is what I have so far. It is what it is.
+**Done so far:**
 
-TO DO:
+Twitter API interaction  
 
-Basically everything, honestly... but specifically:
+- Can tweet to bot account
+- Can search tweets, do streaming, etc.
 
-- get file up/down working with either AWS or Drive
+Google Drive API interaction  
 
-- get Stats and combat working
+- Can read and write to Google Drive (Holy shit this feels good to say)
 
-- get Quest construction working
+Text parsing  
 
-TO DO WAY LATER:
+- Can parse strings using the Orteil style randomgen formatting
 
-- get community voting working
+**To Do:**
+
+Quest Construction
+
+Combat Resolution
+
+Community Voting
